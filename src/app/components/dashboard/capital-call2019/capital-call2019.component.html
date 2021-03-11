@@ -1,0 +1,42 @@
+<div *ngIf="afAuth.user | async as user">
+
+    <!-- Completed items display here -->
+    <div *ngFor="let post of posts | async">
+      <div class="item" *ngIf="post.users == user.email && post.categories == 'Capital Call 2019'">
+  <!-- <div class="item" *ngIf="post.categories == 'mAPN4n8XZJjeBFL6YLQQ'"> -->
+  
+        <div class="item" >
+          <!-- <a href="{{post.downloadURL}}">Download</a>  -->
+  
+          <!-- <div *ngIf="!post.edit" class="post-container completed"> -->
+            <!-- <p class="post-paragraph">{{post.post}}</p> -->
+            <!-- <p class="post-info">Posted by: {{post.name}} on {{post.date}}</p>
+            <button class="btn btn-outline-primary  btn-pill btn-xs" type="button"> <a href="#" download="{{post.downloadURL}}">  Download</a></button> -->
+            <!-- {{post.content}} -->
+            <div class="button-container complete-btns">
+  
+            <img src="assets/images/logo7.png"
+            class="img" width="400" height="500" href="#" >    
+            <!-- <a href="{{post.downloadURL}}>">View Document</a>                    <button class="btn btn-info undo-complete" (click)="toggleComplete(post)">Undo</button>  -->
+            <button class="new"><a href="{{post.downloadURL}}">View Document</a></button> 
+            {{post.image}}
+
+  </div>
+            <!-- {{post.downloadURL}}
+            {{post.url}}
+            {{post.title}}
+            {{post.image}} -->
+            <!-- <img *ngIf="posts.image.url  | async as imageSource"
+  [src]="imageSource"> -->
+  <!-- <a [href]="post.image.url">test</a> -->
+  <hr>
+            <!-- <div class="button-container complete-btns">
+              <button class="btn btn-info undo-complete" (click)="toggleComplete(post)">Undo</button> 
+              <button class="btn btn-danger delete-complete" (click)="delete(post.id)">Delete</button>
+          </div>  -->
+      </div>
+  </div>
+  <style>
+    img {
+      border: 5px solid rgb(240, 228, 228);
+    }</style>
